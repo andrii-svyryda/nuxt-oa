@@ -46,7 +46,7 @@ const pageCount = 5;
 
 const q = ref("");
 
-const { data: productsResponse, pending } = await useAsyncData(
+const { data: productsResponse, pending } = await useAsyncData<any>(
   "productsResponse",
   () =>
     $fetch(`https://dummyjson.com/products/search`, {
