@@ -1,43 +1,38 @@
 <template>
-  <div class="container">
+  <div class="p-5 mx-auto">
     <div class="flex justify-center">
       <div class="w-full">
-        <nav class="navbar bg-gray-100">
-          <a href="/admin/blog/posts/create" class="">Додати</a>
-        </nav>
-
-        <div class="card">
-          <div class="card-body">
-            <table class="table table-auto">
+        <div class="card mt-2">
+          <div class="card-body flex flex-col items-center">
+            <a :href="'/posts/create'"
+              ><button class="text-white py-2 px-6 bg-blue-400 rounded">
+                Create post
+              </button></a
+            >
+            <table class="table mt-5 table-auto">
               <thead>
                 <tr>
-                  <th>#</th>
+                  <th class="p-2">Автор</th>
 
-                  <th>Автор</th>
+                  <th class="p-2">Заголовок</th>
 
-                  <th>Категорія</th>
+                  <th class="p-2">Категорія</th>
 
-                  <th>Заголовок</th>
-
-                  <th>Дата публікації</th>
+                  <th class="p-2">Дата публікації</th>
                 </tr>
               </thead>
 
               <tbody>
                 <tr v-for="post in posts">
-                  <td>{{ post.id }}</td>
+                  <td class="p-2">{{ post.user.name }}</td>
 
-                  <td>{{ post.user.name }}</td>
-
-                  <td>{{ post.category.title }}</td>
-
-                  <td>
-                    <a :href="'/admin/blog/posts/' + post.id + '/edit'">{{
-                      post.title
-                    }}</a>
+                  <td class="p-2">
+                    <a :href="'/posts/' + post.id">{{ post.title }}</a>
                   </td>
 
-                  <td>{{ post.published_at }}</td>
+                  <td class="p-2">{{ post.category.title }}</td>
+
+                  <td class="p-2">{{ post.published_at }}</td>
                 </tr>
               </tbody>
             </table>
