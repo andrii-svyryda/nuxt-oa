@@ -1,3 +1,3 @@
 <template>
-  <PostView />
+  <CategoryView />
 </template>

@@ -1,3 +1,3 @@
 <template>
-  <PostView />
+  <AddPostForm />
 </template>
